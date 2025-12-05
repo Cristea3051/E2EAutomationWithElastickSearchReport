@@ -1,0 +1,8 @@
+target/
+test-results/
+test-output/
+.idea/
+*.iml
+.git/
+.gitignore
+*.log

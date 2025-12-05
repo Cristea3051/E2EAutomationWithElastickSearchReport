@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Single Browser Suite" parallel="methods" thread-count="4" verbose="1">
+
+    <listeners>
+        <listener class-name="com.framework.listeners.TestListener"/>
+    </listeners>
+
+    <test name="Chromium Tests">
+        <parameter name="browser" value="chromium"/>
+        <classes>
+            <class name="com.tests.ExampleTest"/>
+        </classes>
+    </test>
+
+</suite>
