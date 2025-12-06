@@ -43,7 +43,7 @@ public class BasePage {
     }
 
     protected void waitForSelector(String selector, int timeout) {
-        logger.debug("Waiting for selector: {} with timeout: {}ms", selector, timeout);
+        logger.debug("Waiting for selector: {} with timeout: {}ms", selector, (Object) timeout);
         page.waitForSelector(selector, new Page.WaitForSelectorOptions().setTimeout(timeout));
     }
 

@@ -14,9 +14,9 @@ public class ExampleTest extends BaseTest {
 
         navigateToBaseUrl();
 
-        ExamplePage examplePage = new ExamplePage(page);
+        ExamplePage examplePage = new ExamplePage(page());
 
-        assertThat(page.title()).isNotEmpty();
+        assertThat(page().title()).isNotEmpty();
         logger.info("Page title verification completed");
     }
 
@@ -37,7 +37,7 @@ public class ExampleTest extends BaseTest {
         logger.info("Starting test: searchFunctionalityTest");
 
         navigateToBaseUrl();
-        ExamplePage examplePage = new ExamplePage(page);
+        ExamplePage examplePage = new ExamplePage(page());
 
         assertThat(examplePage.isSearchInputVisible()).isTrue();
         assertThat(examplePage.isSearchButtonEnabled()).isTrue();

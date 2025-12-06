@@ -7,11 +7,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.*;
 
+
 @Listeners(TestListener.class)
 public class BaseTest {
     protected static final Logger logger = LoggerFactory.getLogger(BaseTest.class);
     protected ConfigurationManager config;
-    protected Page page;
 
     @BeforeMethod(alwaysRun = true)
     @Parameters({"browser"})
@@ -25,8 +25,7 @@ public class BaseTest {
             BrowserFactory.initializeBrowser();
         }
 
-        page = BrowserFactory.getPage();
-        page.setDefaultTimeout(config.getTimeout());
+        page().setDefaultTimeout(config.getTimeout());
         logger.info("Test setup completed");
     }
 
@@ -36,10 +35,13 @@ public class BaseTest {
         BrowserFactory.closeBrowser();
         logger.info("Test teardown completed");
     }
+    protected Page page() {
+        return BrowserFactory.getPage();
+    }
 
     protected void navigateTo(String url) {
         logger.info("Navigating to: {}", url);
-        page.navigate(url);
+        page().navigate(url);
     }
 
     protected void navigateToBaseUrl() {

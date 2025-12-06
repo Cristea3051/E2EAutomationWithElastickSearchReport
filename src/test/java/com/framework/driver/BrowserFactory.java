@@ -90,6 +90,16 @@ public class BrowserFactory {
         return currentBrowser;
     }
 
+    public static byte[] takeScreenshot() {
+        try {
+            return getPage().screenshot();
+        } catch (Exception e) {
+            logger.error("Failed to take screenshot", e);
+            return null;
+        }
+    }
+
+
     public static void closeBrowser() {
         try {
             if (page.get() != null) {
@@ -119,15 +129,6 @@ public class BrowserFactory {
             logger.info("Browser session closed successfully");
         } catch (Exception e) {
             logger.error("Error closing browser", e);
-        }
-    }
-
-    public static byte[] takeScreenshot() {
-        try {
-            return getPage().screenshot();
-        } catch (Exception e) {
-            logger.error("Failed to take screenshot", e);
-            return null;
         }
     }
 
