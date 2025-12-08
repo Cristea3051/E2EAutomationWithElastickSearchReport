@@ -10,6 +10,9 @@ public class DemoQAPage extends BasePage{
 
     private static final String PAGE_URL = "https://demoqa.com/automation-practice-form";
     public final Locator FIRST_NAME = page.locator("#firstName");
+    public final Locator LAST_NAME = page.locator("#lastName");
+    public final Locator USER_EMAIL = page.locator("#userEmail");
+
 
     public DemoQAPage(Page page) {
         super(page);
@@ -26,11 +29,24 @@ public class DemoQAPage extends BasePage{
         logger.info("Navigation verification completed");
     }
 
-    public void fillName(String firstName){
+    public void fillFirstName(String firstName){
         logger.info("Fill name");
         FIRST_NAME.fill(firstName);
 
-        logger.info("filled with{} ", firstName);
+
+    }
+
+    public void fillLastName(String lastName){
+        logger.info("Proceed to fill last name...");
+        LAST_NAME.fill(lastName);
+
+    }
+
+    public void fillUserEmail(String email){
+
+        logger.info("Proceed to fill User Email");
+        USER_EMAIL.fill(email);
+
 
     }
 

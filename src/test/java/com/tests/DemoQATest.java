@@ -12,15 +12,22 @@ public class DemoQATest extends BaseTest {
     public void testNavigateToDemoQa() {
         DemoQAPage demoQAPage = new DemoQAPage(page());
         demoQAPage.navigateToDemoQa();
-    }
 
-    @Test
-    public void verifyNameInputIsCorrectlyFilled() {
-        String expectedName = "Dino";
-        DemoQAPage demoQAPage = new DemoQAPage(page());
+        String expectedFirstName = "Dino";
+        String expectedLastName = "Ferrari";
+        String expectedEmail = "DinoFerrari@mail.com";
 
-        demoQAPage.fillName(expectedName);
+        demoQAPage.fillFirstName(expectedFirstName);
+        assertThat(demoQAPage.FIRST_NAME).hasValue(expectedFirstName);
+        logger.info("filled with {}", expectedFirstName);
 
+        demoQAPage.fillLastName(expectedLastName);
+        assertThat(demoQAPage.LAST_NAME).hasValue(expectedLastName);
+        logger.info("filled with {}", expectedLastName);
+
+        demoQAPage.fillUserEmail(expectedEmail);
+        assertThat(demoQAPage.USER_EMAIL).hasValue(expectedEmail);
+        logger.info("filled with {}", expectedEmail);
     }
 
 
