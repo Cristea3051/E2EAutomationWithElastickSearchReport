@@ -10,6 +10,8 @@
         <parameter name="browser" value="chromium"/>
         <classes>
             <class name="com.tests.ExampleTest"/>
+            <class name="com.tests.DemoQATest"/>
+
         </classes>
     </test>
 
@@ -17,14 +19,16 @@
         <parameter name="browser" value="firefox"/>
         <classes>
             <class name="com.tests.ExampleTest"/>
+            <class name="com.tests.DemoQATest"/>
+
         </classes>
     </test>
 
-    <test name="WebKit Tests" parallel="methods" thread-count="2">
-        <parameter name="browser" value="webkit"/>
-        <classes>
-            <class name="com.tests.ExampleTest"/>
-        </classes>
-    </test>
+<!--    <test name="WebKit Tests" parallel="methods" thread-count="2">-->
+<!--        <parameter name="browser" value="webkit"/>-->
+<!--        <classes>-->
+<!--            <class name="com.tests.ExampleTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
 </suite>
