@@ -1,6 +1,5 @@
 package com.pages;
 
-import co.elastic.clients.elasticsearch.ml.RunningStateSearchInterval;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.pages.base.BasePage;
@@ -29,7 +28,7 @@ public class SauceDemoPage extends BasePage {
         logger.info("Navigation verification completed");
     }
 
-    public String loginToSauce(String userName, String password){
+    public void loginToSauce(String userName, String password){
 
         userNameInput.fill(userName);
         passwordInput.fill(password);
