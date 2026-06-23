@@ -2,11 +2,12 @@ package com.pages;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import com.pages.base.BasePage;
 
 import static com.framework.driver.BrowserFactory.getCurrentUrl;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class DemoQAPage extends BasePage{
+public class DemoQAPage extends BasePage {
 
     private static final String PAGE_URL = "https://demoqa.com/automation-practice-form";
     public final Locator FIRST_NAME = page.locator("#firstName");

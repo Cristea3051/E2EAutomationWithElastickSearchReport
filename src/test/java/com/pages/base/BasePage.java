@@ -1,4 +1,4 @@
-package com.pages;
+package com.pages.base;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;

@@ -1,6 +1,7 @@
 package com.pages;
 
 import com.microsoft.playwright.Page;
+import com.pages.base.BasePage;
 
 public class ExamplePage extends BasePage {
 
