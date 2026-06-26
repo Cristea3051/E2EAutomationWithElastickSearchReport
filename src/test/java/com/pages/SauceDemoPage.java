@@ -16,7 +16,10 @@ public class SauceDemoPage extends BasePage {
     public final Locator userNameInput = page.locator( "#user-name");
     public final Locator passwordInput = page.locator( "#password");
     public final Locator loginButton = page.locator("#login-button");
-    private final Locator errorMessage = page.locator("[data-test='error']");
+    public final Locator errorMessage = page.locator("[data-test='error']");
+    public final Locator addToCartProduct = page.locator("#add-to-cart-sauce-labs-backpack");
+    public final Locator inventoryNameLocator = page.locator("[data-test='inventory-item-name']");
+
 
 
     public void navigateToSauce(){
@@ -41,6 +44,13 @@ public class SauceDemoPage extends BasePage {
             logger.error("Login failed: " + error);
             throw new AssertionError("Login failed: " + error);
         }
+
+    }
+
+    public void addBagToCart(){
+        String s = inventoryNameLocator.getByText();
+
+
 
     }
 
