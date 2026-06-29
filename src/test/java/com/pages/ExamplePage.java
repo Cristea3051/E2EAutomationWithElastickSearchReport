@@ -1,11 +1,12 @@
 package com.pages;
 
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.pages.base.BasePage;
 
 public class ExamplePage extends BasePage {
 
-    private static final String SEARCH_INPUT = "input[name='q']";
+    private final Locator SEARCH_INPUT = page.locator("input[name='q']");
     private static final String SEARCH_BUTTON = "button[type='submit']";
     private static final String PAGE_TITLE = "h1";
 
@@ -15,7 +16,7 @@ public class ExamplePage extends BasePage {
 
     public void enterSearchQuery(String query) {
         logger.info("Entering search query: {}", query);
-        fill(SEARCH_INPUT, query);
+        fill(String.valueOf(SEARCH_INPUT), query);
     }
 
     public void clickSearchButton() {

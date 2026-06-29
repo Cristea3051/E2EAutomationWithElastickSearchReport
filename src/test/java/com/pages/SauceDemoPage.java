@@ -18,7 +18,6 @@ public class SauceDemoPage extends BasePage {
     public final Locator loginButton = page.locator("#login-button");
     public final Locator errorMessage = page.locator("[data-test='error']");
     public final Locator addToCartProduct = page.locator("#add-to-cart-sauce-labs-backpack");
-    public final Locator inventoryNameLocator = page.locator("[data-test='inventory-item-name']");
 
 
 
@@ -48,10 +47,9 @@ public class SauceDemoPage extends BasePage {
     }
 
     public void addBagToCart(){
-        String s = inventoryNameLocator.getByText();
-
-
-
+        if(isVisible(addToCartProduct)){
+            addToCartProduct.click();
+        }
     }
 
     public Boolean isLoginSuccessful(){

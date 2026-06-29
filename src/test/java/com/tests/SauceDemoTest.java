@@ -11,6 +11,7 @@ public class SauceDemoTest extends BaseTest {
         SauceDemoPage saucePage = new SauceDemoPage(page());
         saucePage.navigateToSauce();
         saucePage.loginToSauce("standard_user", "secret_sauce");
+        saucePage.addBagToCart();
     }
 
 }

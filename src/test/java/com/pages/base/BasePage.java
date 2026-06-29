@@ -29,8 +29,8 @@ public class BasePage {
         return page.textContent(selector);
     }
 
-    protected boolean isVisible(String selector) {
-        return page.isVisible(selector);
+    protected boolean isVisible(Locator selector) {
+        return page.isVisible(String.valueOf(selector));
     }
 
     protected boolean isEnabled(String selector) {
