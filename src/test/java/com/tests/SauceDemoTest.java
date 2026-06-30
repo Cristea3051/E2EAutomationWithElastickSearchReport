@@ -1,7 +1,8 @@
 package com.tests;
 
 import com.framework.config.BaseTest;
-import com.pages.SauceDemoPage;
+import com.pages.Sauce.LoginToSaucePage;
+import com.pages.Sauce.SauceDemoPage;
 import org.testng.annotations.Test;
 
 public class SauceDemoTest extends BaseTest {
@@ -9,8 +10,9 @@ public class SauceDemoTest extends BaseTest {
     @Test
     public void navigateToSauce(){
         SauceDemoPage saucePage = new SauceDemoPage(page());
+        LoginToSaucePage loginSauce = new LoginToSaucePage();
         saucePage.navigateToSauce();
-        saucePage.loginToSauce("standard_user", "secret_sauce");
+        loginSauce.loginToSauce("standard_user", "secret_sauce");
         saucePage.addBagToCart();
     }
 

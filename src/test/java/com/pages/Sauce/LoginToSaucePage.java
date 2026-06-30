@@ -1,34 +1,19 @@
-package com.pages;
+package com.pages.Sauce;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.pages.base.BasePage;
 
-import static com.framework.driver.BrowserFactory.getCurrentUrl;
-import static org.assertj.core.api.Assertions.assertThat;
+public class LoginToSaucePage extends BasePage {
 
-public class SauceDemoPage extends BasePage {
-    public SauceDemoPage(Page page) {
+    public LoginToSaucePage(Page page) {
         super(page);
     }
 
-    private static final String PAGE_URL = "https://www.saucedemo.com/";
     public final Locator userNameInput = page.locator( "#user-name");
     public final Locator passwordInput = page.locator( "#password");
     public final Locator loginButton = page.locator("#login-button");
     public final Locator errorMessage = page.locator("[data-test='error']");
-    public final Locator addToCartProduct = page.locator("#add-to-cart-sauce-labs-backpack");
-
-
-
-    public void navigateToSauce(){
-
-        logger.info("Proceed to navigate to sauce");
-        page.navigate(PAGE_URL);
-        assertThat(getCurrentUrl()).contains(PAGE_URL);
-        assertThat(getTitle()).isNotEmpty();
-        logger.info("Navigation verification completed");
-    }
 
     public void loginToSauce(String userName, String password){
 
@@ -46,18 +31,12 @@ public class SauceDemoPage extends BasePage {
 
     }
 
-    public void addBagToCart(){
-        if(isVisible(addToCartProduct)){
-            addToCartProduct.click();
-        }
+    public String getErrorMessage() {
+        return errorMessage.isVisible() ? errorMessage.textContent() : null;
     }
 
     public Boolean isLoginSuccessful(){
         return page.locator("[data-test='title']").isVisible();
-    }
-
-    public String getErrorMessage() {
-        return errorMessage.isVisible() ? errorMessage.textContent() : null;
     }
 
 
